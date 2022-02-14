@@ -29,7 +29,6 @@ public class CSVServiceImpl implements CSVService {
         CSVParser csvParser = new CSVParser(br, CSVFormat.DEFAULT);
         Iterable<CSVRecord> csvRecords = csvParser.getRecords();
         for (CSVRecord csvRecord : csvRecords) {
-            new CurrencyData(csvRecord.get(0), csvRecord.get(1));
             CurrencyData currencyData = new CurrencyData();
             currencyData.setCountry(csvRecord.get(0).trim());
             currencyData.setCurrency(csvRecord.get(1).trim());
